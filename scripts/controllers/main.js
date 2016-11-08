@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 angular.module('chattyApp')
   .controller('MainCtrl', function ( $scope, messageService ) {
@@ -7,8 +7,10 @@ angular.module('chattyApp')
     });
 
     $scope.addMessage = function ( message ) {
+      console.log(message);
       if (message) {
         messageService.addMessage(message).then(function ( response ) {
+          console.log(response);
           $scope.messages = response.data;
         });
       }
